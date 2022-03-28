@@ -1,6 +1,13 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+const reviewSchema = new Schema({
+    content: String,
+    rating: {type: Number, min: 1, max: 5, default: 5}
+  }, {
+    timestamps: true
+  });
+
 const wineSchema = new Schema({
     wineLabel: {
         type: String,
@@ -19,6 +26,8 @@ const wineSchema = new Schema({
         default: function () {
           return new Date().getFullYear();
         }
-    },
+    }, reviews: [reviewSchema]
+}, { 
+    timestamps: true
 });
 module.exports = mongoose.model('Wine', wineSchema);

@@ -1,9 +1,11 @@
 const Wine = require('../models/wine')
 
 module.exports = {
+    index, 
+    show, 
     new: newWine,
     create,
-    index,
+
 };
 
 function index (req, res) {
@@ -12,6 +14,12 @@ function index (req, res) {
     });
 };
 
+function show(req, res) {
+    Wine.findById(req.params.id, function(err, wine) {
+      res.render('wines/show', { title: 'Wine Detail', wine });
+    });
+  }
+  
 function newWine(req, res) {
     res.render('wines/new', {title:'Add New Wine'})
 };

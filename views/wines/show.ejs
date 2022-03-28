@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Review of the Wine</title>
+</head>
+<body>
+    <section id="show-page">
+        <div>Label: </div>
+        <div><%= wine.wineLabel %></div>
+        <div>Color: </div>
+        <div><%= wine.wineColor %></div>
+        <div>Variety: </div>
+        <div><%= wine.grapeVariety %></div>
+        <div>Year: </div>
+        <div><%= wine.wineYear %></div>
+      </section>
+
+      <br><br><h2>Reviews</h2>
+<form id="add-review-form" method="POST"
+  action="/wines/<%= wine._id %>/reviews">
+  <label>Review:</label>
+  <textarea name="content"></textarea>
+  <label>Rating:</label>
+  <select name="rating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5" selected>5</option>
+  </select>
+  <input type="submit" value="Add Review">
+</form>
+
+<% if (wine.reviews.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Review</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% wine.reviews.forEach(function(r) { %>
+          <tr>
+            <td><%= r.createdAt.toLocaleDateString() %></td>
+            <td><%= r.content %></td>
+            <td><%= r.rating %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h5>No Reviews Yet</h5>
+  <% } %>
+</body>
+</html>
