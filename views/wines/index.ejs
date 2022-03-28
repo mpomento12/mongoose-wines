@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Document</title>
+</head>
+<body>
+    <h2>All Wines</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Label</th>
+          <th>Color</th>
+          <th>Style</th>
+          <th>Year</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% wines.forEach(function(w) { %>
+          <tr>
+            <td><%= w.wineLabel %></td>
+            <td><%= w.wineColor %></td>
+            <td><%= w.grapeVariety %></td>
+            <td><%= w.wineYear %></td>
+            <td><a href="/wines/<%= w._id %>">DETAILS</a></td>
+          </tr>
+          <% }) %>
+      </tbody>
+    </table>
+    <h4><a href="/wines/new">Add a new wine</a></h4>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Document</title>
+</head>
+<body>
+    <h2>Enter a New Wine</h2>
+    <form action="/wines" method="POST">
+      <label>Label:
+        <input type="text" name="wineLabel">
+      </label><br>
+      <label>Color:
+        <select name="wineColor">
+            <option value="Red">Red</option>
+            <option value="White">White</option>
+        </select>
+      </label><br>
+      <label>Style:
+        <select name="grapeVariety">
+            <option value="Pinot Noir">Pinot Noir</option>
+            <option value="Pinot Blanc">Pinot Blanc</option>
+            <option value="Sauvignon Blanc">Sauvignon Blanc</option>
+            <option value="Tempranillo">Tempranillo</option>
+            <option value="Porto">Porto</option>
+        </select>
+    </label><br>
+    <label>Year:
+        <input type="text" name="wineYear">
+    </label><br>
+        <input type="submit" value="Add Wine">
+    </form>
+</body>
+</html>
+</body>
+</html>
