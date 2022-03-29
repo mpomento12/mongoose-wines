@@ -3,7 +3,10 @@ const Schema = mongoose.Schema
 
 const reviewSchema = new Schema({
     content: String,
-    rating: {type: Number, min: 1, max: 5, default: 5}
+    rating: {type: Number, min: 1, max: 5, default: 5},
+    user: {type: Schema.Types.ObjectId, ref: 'User'},
+    userName: String,
+    userAvatar: String
   }, {
     timestamps: true
   });
@@ -15,7 +18,7 @@ const wineSchema = new Schema({
     },
     wineColor: {
         type: String,
-        enum: ['red', 'White']
+        enum: ['Red', 'White']
     },
     grapeVariety: {
         type: String,

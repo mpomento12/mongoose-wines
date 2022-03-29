@@ -10,13 +10,13 @@ module.exports = {
 
 function index (req, res) {
     Wine.find({}, function(err, wines) {
-        res.render('wines/index', { title: 'All Wine', wines });
+        res.render('wines/index', { title: 'All The Wines', wines });
     });
 };
 
 function show(req, res) {
     Wine.findById(req.params.id, function(err, wine) {
-      res.render('wines/show', { title: 'Wine Detail', wine });
+      res.render('wines/show', { title: 'Wine Details', wine });
     });
   }
   
