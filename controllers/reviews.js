@@ -36,15 +36,17 @@ function deleteReview(req, res, next) {
 
   function edit (req, res) {
     Wine.findOne({'reviews._id': req.params.id}, function(err, wine){
-     const review = wine.reviews.id(req.params.id);
+      console.log(req.params.id)
+      const review = wine.reviews.id(req.params.id);
      res.render('reviews/edit', {review});
   });
 }
   function update (req, res) {
-    Wine.findById({'reviews._id': req.params.id}, function(err, wine) {
+    Wine.findOne({'reviews._id': req.params.id}, function(err, wine) {
       const reviewSubdoc = wine.reviews.id(req.params.id)
-      if (!reviewSubdoc.userId.equals(req.user._id)) return res.redirect(`/wines/${wine._id}`)
-      reviewSubdoc.text = req.body.text;
+      if (!reviewSubdoc.user._id.equals(req.user._id)) return res.redirect(`/wines/index`)
+      reviewSubdoc.content = req.body.content;
+      reviewSubdoc.rating = req.body.rating;
       wine.save(function(err) {
         res.redirect(`/wines/${wine._id}`);
     });
