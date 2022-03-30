@@ -3,7 +3,9 @@ var Wine = require('../models/wine');
 
 module.exports = {
   create,
-  delete: deleteReview
+  edit,
+  update,
+  delete: deleteReview,
 
 };
 
@@ -19,7 +21,6 @@ function create(req, res) {
   });
 }
 
-
 function deleteReview(req, res, next) {
     Wine.findOne({'reviews._id': req.params.id}).then(function(wine) {
       const review = wine.reviews.id(req.params.id);
@@ -32,3 +33,20 @@ function deleteReview(req, res, next) {
       });
     });
   }
+
+  function edit (req, res) {
+    Wine.findOne({'reviews._id': req.params.id}, function(err, wine){
+     const review = wine.reviews.id(req.params.id);
+     res.render('reviews/edit', {review});
+  });
+}
+  function update (req, res) {
+    Wine.findById({'reviews._id': req.params.id}, function(err, wine) {
+      const reviewSubdoc = wine.reviews.id(req.params.id)
+      if (!reviewSubdoc.userId.equals(req.user._id)) return res.redirect(`/wines/${wine._id}`)
+      reviewSubdoc.text = req.body.text;
+      wine.save(function(err) {
+        res.redirect(`/wines/${wine._id}`);
+    });
+  });
+}
