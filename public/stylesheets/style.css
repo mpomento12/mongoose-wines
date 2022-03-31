@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
   font-family: Helvetica;
-  color: #424748;
+  color: rgb(190, 136, 42);
 }
 
 body {
@@ -16,7 +16,7 @@ body {
 
 body > nav {
   grid-area: nav;
-  background-color: #B8C0C2;
+  background-color: #ec0ba1;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -34,7 +34,7 @@ body > main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #E8ECEB;
+  background-color: #85044b;
   padding: 20px;
   overflow-y: scroll;
 }
