@@ -13,6 +13,11 @@ This app purpose is to add new exiciting wines and have a chance to review durin
 
 HTML, CSS, JS, Node JS, Express, Mongo DB, Mongoose
 
+### Trello and Heroku 
+
+[Trello](https://trello.com/b/6mm2wNsy/project-2)
+[Heroku](https://mongoose-wines.herokuapp.com/)
+
 
 
 
