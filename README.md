@@ -9,6 +9,10 @@ This app purpose is to add new exiciting wines and have a chance to review durin
 ![screen2](https://user-images.githubusercontent.com/55121344/161135820-f41aace2-a856-45f2-8cfb-4d002d5e9a91.gif)
 ![screen3](https://user-images.githubusercontent.com/55121344/161135908-c6a2103e-4b7c-40af-bf51-f4db1618cbd0.gif)
 
+### Technologies Used
+
+HTML, CSS, JS, Node JS, Express, Mongo DB, Mongoose
+
 
 
 
