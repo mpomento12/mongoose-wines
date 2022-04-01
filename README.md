@@ -11,7 +11,7 @@ This app purpose is to add new exiciting wines and have a chance to review durin
 
 ### Technologies Used
 
-HTML, CSS, JS, Node JS, Express, Mongo DB, Mongoose
+HTML, CSS, JS, Node JS, Express, Mongo DB, Mongoose, google OAuth
 
 ### Trello and Heroku 
 
