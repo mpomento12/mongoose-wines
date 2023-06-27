@@ -1,27 +1,19 @@
 <%- include('../partials/header') %>
-    <h2></h2>
-    <form action="/wines" method="POST">
-      <label>Label:
-        <input type="text" name="wineLabel">
-      </label><br>
-      <label>Color:
-        <select name="wineColor">
-            <option value="Red">Red</option>
-            <option value="White">White</option>
-        </select>
-      </label><br>
-      <label>Variety:
-        <select name="grapeVariety">
-            <option value="Pinot Noir">Pinot Noir</option>
-            <option value="Pinot Blanc">Pinot Blanc</option>
-            <option value="Sauvignon Blanc">Sauvignon Blanc</option>
-            <option value="Tempranillo">Tempranillo</option>
-            <option value="Porto">Porto</option>
-        </select>
-    </label><br>
-    <label>Year:
-        <input type="text" name="wineYear">
-    </label><br>
-        <input type="submit" value="Add Wine">
-    </form>
+<h2></h2>
+<form action="/wines" method="POST">
+  <label> Label: <input type="text" name="wineLabel" /> </label><br />
+  <label
+    >Color:
+    <select name="wineColor">
+      <option value="Red">Red</option>
+      <option value="White">White</option>
+      <option value="Pink">Pink</option>
+      <option value="Yellow">Yellow</option>
+      <option value="Orange">Orange</option>
+    </select> </label
+  ><br />
+  <label>Variety: <input type="text" name="grapeVariety" /> </label><br />
+  <label>Year: <input type="text" name="wineYear" /> </label><br />
+  <input type="submit" value="Add Wine" />
+</form>
 <%- include('../partials/footer') %>
